@@ -1,0 +1,19 @@
+module PWM( input logic clk,
+				output logic led
+);
+
+logic [7:0] counter = 0;
+
+always_ff @(posedge clk) begin
+	
+	if (counter < 100) 
+		counter <= counter + 1; // Cuenta hasta 100
+		
+	else 
+		counter <= 0; //Reset counter
+end
+
+//Se crea un 20% de ciclo de trabajo
+assign led = (counter < 20)? 1'b1 : 1'b0; //Se asigna el led a 1 cuando el valor del counter es menor a 20
+
+endmodule

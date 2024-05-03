@@ -1,6 +1,6 @@
 Analysis & Synthesis report for PWM
-Wed May 01 19:49:10 2024
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri May 03 09:22:20 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -13,15 +13,10 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: counter:contador
- 13. Port Connectivity Checks: "counter:contador"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -48,14 +43,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 01 19:49:10 2024       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status     ; Successful - Fri May 03 09:22:19 2024       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; PWM                                         ;
-; Top-level Entity Name           ; PWM                                         ;
+; Top-level Entity Name           ; spi_slave                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 17                                          ;
-; Total pins                      ; 8                                           ;
+; Total registers                 ; 4                                           ;
+; Total pins                      ; 22                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -74,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; PWM                ; PWM                ;
+; Top-level entity name                                                           ; spi_slave          ; PWM                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -160,74 +155,62 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path               ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------+---------+
-; PWM.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Desktop/PWM/PWM.sv     ;         ;
-; counter.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Desktop/PWM/counter.sv ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
+; spi_slave.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 12        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 17        ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 5         ;
-;     -- 5 input functions                    ; 0         ;
-;     -- 4 input functions                    ; 3         ;
-;     -- <=3 input functions                  ; 9         ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 17        ;
-;                                             ;           ;
-; I/O pins                                    ; 8         ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 17        ;
-; Total fan-out                               ; 114       ;
-; Average fan-out                             ; 2.28      ;
-+---------------------------------------------+-----------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 4            ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 6            ;
+;     -- 7 input functions                    ; 2            ;
+;     -- 6 input functions                    ; 0            ;
+;     -- 5 input functions                    ; 0            ;
+;     -- 4 input functions                    ; 2            ;
+;     -- <=3 input functions                  ; 2            ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 4            ;
+;                                             ;              ;
+; I/O pins                                    ; 22           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; bit_count[1] ;
+; Maximum fan-out                             ; 4            ;
+; Total fan-out                               ; 61           ;
+; Average fan-out                             ; 1.13         ;
++---------------------------------------------+--------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------+-------------+--------------+
-; |PWM                       ; 17 (12)             ; 17 (12)                   ; 0                 ; 0          ; 8    ; 0            ; |PWM                  ; PWM         ; work         ;
-;    |counter:contador|      ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |PWM|counter:contador ; counter     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |spi_slave                 ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 22   ; 0            ; |spi_slave          ; spi_slave   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; dutycycle[4..31]                       ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 28 ;                                        ;
-+----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -235,55 +218,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17    ;
-; Number of registers using Synchronous Clear  ; 8     ;
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Clear ; 3     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; counter:contador|btn_prev              ; 4       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PWM|counter:contador|out[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:contador ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; N              ; 4     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------+
-; Port Connectivity Checks: "counter:contador" ;
-+------------+-------+----------+--------------+
-; Port       ; Type  ; Severity ; Details      ;
-+------------+-------+----------+--------------+
-; top[1..0]  ; Input ; Info     ; Stuck at VCC ;
-; top[31..4] ; Input ; Info     ; Stuck at GND ;
-; top[3]     ; Input ; Info     ; Stuck at VCC ;
-; top[2]     ; Input ; Info     ; Stuck at GND ;
-+------------+-------+----------+--------------+
 
 
 +-----------------------------------------------------+
@@ -291,21 +233,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 17                          ;
-;     CLR               ; 5                           ;
-;     SCLR              ; 8                           ;
-;     plain             ; 4                           ;
-; arriav_lcell_comb     ; 17                          ;
-;     arith             ; 8                           ;
-;         1 data inputs ; 8                           ;
-;     normal            ; 9                           ;
-;         1 data inputs ; 1                           ;
-;         4 data inputs ; 3                           ;
-;         6 data inputs ; 5                           ;
-; boundary_port         ; 8                           ;
+; arriav_ff             ; 4                           ;
+;     CLR               ; 3                           ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 7                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 5                           ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 2                           ;
+; boundary_port         ; 22                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.42                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -314,7 +256,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -323,37 +265,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed May 01 19:48:51 2024
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri May 03 09:22:04 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PWM -c PWM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file pwm.sv
-    Info (12023): Found entity 1: PWM File: C:/Users/Alisson RM/Desktop/PWM/PWM.sv Line: 1
+    Info (12023): Found entity 1: PWM File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/PWM.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pwm_tb.sv
-    Info (12023): Found entity 1: PWM_tb File: C:/Users/Alisson RM/Desktop/PWM/PWM_tb.sv Line: 1
+    Info (12023): Found entity 1: PWM_tb File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/PWM_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file counter.sv
-    Info (12023): Found entity 1: counter File: C:/Users/Alisson RM/Desktop/PWM/counter.sv Line: 1
-Info (12127): Elaborating entity "PWM" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at PWM.sv(28): truncated value with size 32 to match size of target (8) File: C:/Users/Alisson RM/Desktop/PWM/PWM.sv Line: 28
-Info (12128): Elaborating entity "counter" for hierarchy "counter:contador" File: C:/Users/Alisson RM/Desktop/PWM/PWM.sv Line: 17
-Warning (10230): Verilog HDL assignment warning at counter.sv(18): truncated value with size 32 to match size of target (4) File: C:/Users/Alisson RM/Desktop/PWM/counter.sv Line: 18
+    Info (12023): Found entity 1: counter File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/counter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file spi_slave.sv
+    Info (12023): Found entity 1: spi_slave File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 1
+Info (12127): Elaborating entity "spi_slave" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at spi_slave.sv(26): truncated value with size 32 to match size of target (3) File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 26
+Warning (10034): Output port "data_received" at spi_slave.sv(8) has no driver File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "data_received[0]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+    Warning (13410): Pin "data_received[1]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+    Warning (13410): Pin "data_received[2]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+    Warning (13410): Pin "data_received[3]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+    Warning (13410): Pin "data_received[4]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+    Warning (13410): Pin "data_received[5]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+    Warning (13410): Pin "data_received[6]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
+    Warning (13410): Pin "data_received[7]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "RegALU[0]" File: C:/Users/Alisson RM/Desktop/PWM/PWM.sv Line: 2
-    Warning (15610): No output dependent on input pin "RegALU[1]" File: C:/Users/Alisson RM/Desktop/PWM/PWM.sv Line: 2
-    Warning (15610): No output dependent on input pin "RegALU[2]" File: C:/Users/Alisson RM/Desktop/PWM/PWM.sv Line: 2
-    Warning (15610): No output dependent on input pin "RegALU[3]" File: C:/Users/Alisson RM/Desktop/PWM/PWM.sv Line: 2
-Info (21057): Implemented 29 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 21 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Wed May 01 19:49:10 2024
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:36
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 2
+    Warning (15610): No output dependent on input pin "MOSI" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 4
+Info (21057): Implemented 28 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 6 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4865 megabytes
+    Info: Processing ended: Fri May 03 09:22:20 2024
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:17
 
 

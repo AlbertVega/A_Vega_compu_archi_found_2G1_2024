@@ -39,10 +39,10 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY PWM
+set_global_assignment -name TOP_LEVEL_ENTITY spi_slave
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:12:35  MAY 01, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name BOARD "DE1-SoC Board"
 set_global_assignment -name SYSTEMVERILOG_FILE PWM.sv
@@ -60,12 +60,25 @@ set_global_assignment -name EDA_TEST_BENCH_NAME PWM_tb -section_id eda_simulatio
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id PWM_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME PWM_tb -section_id PWM_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE PWM_tb.sv -section_id PWM_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE counter.sv
 set_location_assignment PIN_AA14 -to btn
 set_location_assignment PIN_V16 -to led
 set_location_assignment PIN_AB12 -to rst
 set_location_assignment PIN_AF14 -to clk
+set_global_assignment -name SYSTEMVERILOG_FILE spi_slave.sv
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AC18 -to SCLK
+set_location_assignment PIN_Y17 -to MOSI
+set_location_assignment PIN_AD17 -to MISO
+set_location_assignment PIN_Y18 -to ss
+set_location_assignment PIN_V17 -to data_received[0]
+set_location_assignment PIN_V18 -to data_received[1]
+set_location_assignment PIN_W17 -to data_received[2]
+set_location_assignment PIN_W19 -to data_received[3]
+set_location_assignment PIN_Y19 -to data_received[4]
+set_location_assignment PIN_W20 -to data_received[5]
+set_location_assignment PIN_W21 -to data_received[6]
+set_location_assignment PIN_Y21 -to data_received[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

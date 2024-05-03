@@ -1,6 +1,6 @@
 Flow report for PWM
-Wed May 01 19:50:36 2024
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri May 03 09:23:39 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed May 01 19:50:36 2024       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Flow Status                     ; Successful - Fri May 03 09:23:39 2024       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; PWM                                         ;
-; Top-level Entity Name           ; PWM                                         ;
+; Top-level Entity Name           ; spi_slave                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 12 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 17                                          ;
-; Total pins                      ; 8 / 457 ( 2 % )                             ;
+; Logic utilization (in ALMs)     ; 5 / 32,070 ( < 1 % )                        ;
+; Total registers                 ; 4                                           ;
+; Total pins                      ; 22 / 457 ( 5 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/01/2024 19:48:51 ;
+; Start date & time ; 05/03/2024 09:22:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PWM                 ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 66692964816526.171461453126068         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 101957959632201.171474972409844        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; PWM_tb         ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; PWM_tb                                 ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
@@ -91,12 +91,13 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; spi_slave   ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; spi_slave   ; Top            ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; spi_slave   ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                     ; spi_slave                              ; PWM           ; --          ; --             ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
@@ -105,12 +106,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4786 MB             ; 00:00:36                           ;
-; Fitter               ; 00:01:03     ; 1.0                     ; 6171 MB             ; 00:01:45                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4836 MB             ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.0                     ; 5094 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4721 MB             ; 00:00:01                           ;
-; Total                ; 00:01:39     ; --                      ; --                  ; 00:02:37                           ;
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4865 MB             ; 00:00:16                           ;
+; Fitter               ; 00:00:55     ; 1.0                     ; 6932 MB             ; 00:01:23                           ;
+; Assembler            ; 00:00:11     ; 1.0                     ; 4840 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.0                     ; 5165 MB             ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
+; Total                ; 00:01:29     ; --                      ; --                  ; 00:01:52                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -119,11 +120,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-LTALUQK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-LTALUQK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-LTALUQK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-LTALUQK  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-LTALUQK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Albert           ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Albert           ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Albert           ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Albert           ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Albert           ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

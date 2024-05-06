@@ -1,37 +1,276 @@
-|spi_slave
-clk => ~NO_FANOUT~
-rst => bit_count[0].ACLR
-rst => bit_count[1].ACLR
-rst => bit_count[2].ACLR
-rst => MISO~reg0.ENA
-MOSI => ~NO_FANOUT~
-MISO << MISO~reg0.DB_MAX_OUTPUT_PORT_TYPE
-SCLK => MISO~reg0.CLK
-SCLK => bit_count[0].CLK
-SCLK => bit_count[1].CLK
-SCLK => bit_count[2].CLK
-ss => bit_count.OUTPUTSELECT
-ss => bit_count.OUTPUTSELECT
-ss => bit_count.OUTPUTSELECT
-ss => MISO.OUTPUTSELECT
-ss => bit_count.OUTPUTSELECT
-ss => bit_count.OUTPUTSELECT
-ss => bit_count.OUTPUTSELECT
-data_received[0] << <GND>
-data_received[1] << <GND>
-data_received[2] << <GND>
-data_received[3] << <GND>
-data_received[4] << <GND>
-data_received[5] << <GND>
-data_received[6] << <GND>
-data_received[7] << <GND>
-data_to_send[0] => Mux0.IN3
-data_to_send[1] => Mux0.IN4
-data_to_send[2] => Mux0.IN5
-data_to_send[3] => Mux0.IN6
-data_to_send[4] => Mux0.IN7
-data_to_send[5] => Mux0.IN8
-data_to_send[6] => Mux0.IN9
-data_to_send[7] => Mux0.IN10
+|ALU
+in1[0] => in1[0].IN2
+in1[1] => in1[1].IN2
+in1[2] => in1[2].IN2
+in1[3] => in1[3].IN2
+in2[0] => in2[0].IN2
+in2[1] => in2[1].IN2
+in2[2] => in2[2].IN2
+in2[3] => in2[3].IN2
+mode[0] => Mux0.IN18
+mode[0] => Mux1.IN18
+mode[0] => Mux2.IN18
+mode[0] => Mux3.IN18
+mode[0] => Decoder1.IN2
+mode[0] => Decoder2.IN3
+mode[1] => Mux0.IN17
+mode[1] => Mux1.IN17
+mode[1] => Mux2.IN17
+mode[1] => Mux3.IN17
+mode[1] => Decoder0.IN2
+mode[1] => Decoder2.IN2
+mode[2] => Mux0.IN16
+mode[2] => Mux1.IN16
+mode[2] => Mux2.IN16
+mode[2] => Mux3.IN16
+mode[2] => Decoder0.IN1
+mode[2] => Decoder1.IN1
+mode[2] => Decoder2.IN1
+mode[3] => Mux0.IN15
+mode[3] => Mux1.IN15
+mode[3] => Mux2.IN15
+mode[3] => Mux3.IN15
+mode[3] => Decoder0.IN0
+mode[3] => Decoder1.IN0
+mode[3] => Decoder2.IN0
+neg <= neg.DB_MAX_OUTPUT_PORT_TYPE
+cero <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry$latch.DB_MAX_OUTPUT_PORT_TYPE
+des <= <GND>
+num[0][0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+num[0][1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+num[0][2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+num[0][3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+num[1][0] <= num.DB_MAX_OUTPUT_PORT_TYPE
+num[1][1] <= <GND>
+num[1][2] <= <GND>
+num[1][3] <= <GND>
+mode_seg[0] <= mode_seg.DB_MAX_OUTPUT_PORT_TYPE
+mode_seg[1] <= <GND>
+mode_seg[2] <= <GND>
+mode_seg[3] <= mode_seg.DB_MAX_OUTPUT_PORT_TYPE
+mode_seg[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+mode_seg[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+mode_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+out[0][0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[0][1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[0][2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[0][3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[0][4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[0][5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[0][6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1][0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1][1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1][2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1][3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1][4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1][5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1][6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|sumador4bits:UUT
+Ent1[0] => Ent1[0].IN1
+Ent1[1] => Ent1[1].IN1
+Ent1[2] => Ent1[2].IN1
+Ent1[3] => Ent1[3].IN1
+Ent2[0] => Ent2[0].IN1
+Ent2[1] => Ent2[1].IN1
+Ent2[2] => Ent2[2].IN1
+Ent2[3] => Ent2[3].IN1
+Cout <= Sumador_completo:for_loop[3].U2.Cout
+Resultado[0] <= Sumador_medio:U1.Suma
+Resultado[1] <= Sumador_completo:for_loop[1].U2.Suma
+Resultado[2] <= Sumador_completo:for_loop[2].U2.Suma
+Resultado[3] <= Sumador_completo:for_loop[3].U2.Suma
+salida7seg0[0] <= <GND>
+salida7seg0[1] <= <GND>
+salida7seg0[2] <= <GND>
+salida7seg0[3] <= <GND>
+salida7seg0[4] <= <GND>
+salida7seg0[5] <= <GND>
+salida7seg0[6] <= <GND>
+salida7seg1[0] <= <GND>
+salida7seg1[1] <= <GND>
+salida7seg1[2] <= <GND>
+salida7seg1[3] <= <GND>
+salida7seg1[4] <= <GND>
+salida7seg1[5] <= <GND>
+salida7seg1[6] <= <GND>
+
+
+|ALU|sumador4bits:UUT|Sumador_medio:U1
+A => Cout.IN0
+A => Suma.IN0
+B => Cout.IN1
+B => Suma.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Suma <= Suma.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|sumador4bits:UUT|Sumador_completo:for_loop[1].U2
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => Suma.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Suma <= Suma.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|sumador4bits:UUT|Sumador_completo:for_loop[2].U2
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => Suma.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Suma <= Suma.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|sumador4bits:UUT|Sumador_completo:for_loop[3].U2
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN1
+Cin => Cout.IN1
+Cin => Suma.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Suma <= Suma.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|restador4bits:UUT_r
+Ent1[0] => Ent1[0].IN1
+Ent1[1] => Ent1[1].IN1
+Ent1[2] => Ent1[2].IN1
+Ent1[3] => Ent1[3].IN1
+Ent2[0] => Ent2[0].IN1
+Ent2[1] => Ent2[1].IN1
+Ent2[2] => Ent2[2].IN1
+Ent2[3] => Ent2[3].IN1
+Cout <= Restador_completo:for_loop[3].U2.Cout
+Resultado[0] <= Restador_medio:U1.Resta
+Resultado[1] <= Restador_completo:for_loop[1].U2.Resta
+Resultado[2] <= Restador_completo:for_loop[2].U2.Resta
+Resultado[3] <= Restador_completo:for_loop[3].U2.Resta
+salida7seg0[0] <= <GND>
+salida7seg0[1] <= <GND>
+salida7seg0[2] <= <GND>
+salida7seg0[3] <= <GND>
+salida7seg0[4] <= <GND>
+salida7seg0[5] <= <GND>
+salida7seg0[6] <= <GND>
+salida7seg1[0] <= <GND>
+salida7seg1[1] <= <GND>
+salida7seg1[2] <= <GND>
+salida7seg1[3] <= <GND>
+salida7seg1[4] <= <GND>
+salida7seg1[5] <= <GND>
+salida7seg1[6] <= <GND>
+
+
+|ALU|restador4bits:UUT_r|Restador_medio:U1
+A => Resta.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Resta.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Resta <= Resta.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|restador4bits:UUT_r|Restador_completo:for_loop[1].U2
+A => Resta.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN0
+B => Resta.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => Resta.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Resta <= Resta.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|restador4bits:UUT_r|Restador_completo:for_loop[2].U2
+A => Resta.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN0
+B => Resta.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => Resta.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Resta <= Resta.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|restador4bits:UUT_r|Restador_completo:for_loop[3].U2
+A => Resta.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => Cout.IN1
+B => Cout.IN0
+B => Resta.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => Resta.IN1
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Resta <= Resta.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|Decodificador4:deco
+num_all[0][0] => num_all[0][0].IN1
+num_all[0][1] => num_all[0][1].IN1
+num_all[0][2] => num_all[0][2].IN1
+num_all[0][3] => num_all[0][3].IN1
+num_all[1][0] => num_all[1][0].IN1
+num_all[1][1] => num_all[1][1].IN1
+num_all[1][2] => num_all[1][2].IN1
+num_all[1][3] => num_all[1][3].IN1
+seg[0][0] <= DecodificadorBinario:for_loop[0].U1.seg
+seg[0][1] <= DecodificadorBinario:for_loop[0].U1.seg
+seg[0][2] <= DecodificadorBinario:for_loop[0].U1.seg
+seg[0][3] <= DecodificadorBinario:for_loop[0].U1.seg
+seg[0][4] <= DecodificadorBinario:for_loop[0].U1.seg
+seg[0][5] <= DecodificadorBinario:for_loop[0].U1.seg
+seg[0][6] <= DecodificadorBinario:for_loop[0].U1.seg
+seg[1][0] <= DecodificadorBinario:for_loop[4].U1.seg
+seg[1][1] <= DecodificadorBinario:for_loop[4].U1.seg
+seg[1][2] <= DecodificadorBinario:for_loop[4].U1.seg
+seg[1][3] <= DecodificadorBinario:for_loop[4].U1.seg
+seg[1][4] <= DecodificadorBinario:for_loop[4].U1.seg
+seg[1][5] <= DecodificadorBinario:for_loop[4].U1.seg
+seg[1][6] <= DecodificadorBinario:for_loop[4].U1.seg
+
+
+|ALU|Decodificador4:deco|DecodificadorBinario:for_loop[0].U1
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|Decodificador4:deco|DecodificadorBinario:for_loop[4].U1
+bin[0] => Decoder0.IN3
+bin[1] => Decoder0.IN2
+bin[2] => Decoder0.IN1
+bin[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

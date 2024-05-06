@@ -1,0 +1,11 @@
+modulo Sumador_completo(
+						input logic A, B, Cin,
+						output logic Cout, Suma
+);
+
+always_comb begin
+	Cout = (A and B) or ((A xor B) and Cin);
+	Suma = (A xor B) xor Cin;
+end
+
+endmodule

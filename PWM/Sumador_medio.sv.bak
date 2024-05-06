@@ -1,0 +1,12 @@
+module Sumador_medio(
+					input logic A, B,
+					output logic Cout, Suma_med
+
+);
+
+always_comb begin
+	Cout = A and B; 
+	Suma = A or B;
+end 
+
+endmodule

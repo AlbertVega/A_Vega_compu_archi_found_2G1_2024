@@ -1,22 +1,19 @@
-Analysis & Synthesis report for PWM
-Fri May 03 09:22:20 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Analysis & Elaboration report for PWM
+Mon May 06 00:06:19 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "Decodificador4:deco"
+  6. Port Connectivity Checks: "restador4bits:UUT_r"
+  7. Port Connectivity Checks: "sumador4bits:UUT"
+  8. Analysis & Elaboration Messages
 
 
 
@@ -40,36 +37,47 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 03 09:22:19 2024       ;
-; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                   ; PWM                                         ;
-; Top-level Entity Name           ; spi_slave                                   ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4                                           ;
-; Total pins                      ; 22                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Mon May 06 00:06:19 2024       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; PWM                                         ;
+; Top-level Entity Name         ; ALU                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; spi_slave          ; PWM                ;
+; Top-level entity name                                                           ; ALU                ; PWM                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -150,160 +158,166 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
-+----------------------------+-------------+
++----------------------------------------------------+
+; Port Connectivity Checks: "Decodificador4:deco"    ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; num_all[1][3..1] ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; spi_slave.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "restador4bits:UUT_r"                                                                                            ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; salida7seg0 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; salida7seg1 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 4            ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 6            ;
-;     -- 7 input functions                    ; 2            ;
-;     -- 6 input functions                    ; 0            ;
-;     -- 5 input functions                    ; 0            ;
-;     -- 4 input functions                    ; 2            ;
-;     -- <=3 input functions                  ; 2            ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 4            ;
-;                                             ;              ;
-; I/O pins                                    ; 22           ;
-;                                             ;              ;
-; Total DSP Blocks                            ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; bit_count[1] ;
-; Maximum fan-out                             ; 4            ;
-; Total fan-out                               ; 61           ;
-; Average fan-out                             ; 1.13         ;
-+---------------------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sumador4bits:UUT"                                                                                               ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; salida7seg0 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; salida7seg1 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |spi_slave                 ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 22   ; 0            ; |spi_slave          ; spi_slave   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 4     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 4                           ;
-;     CLR               ; 3                           ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 7                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 5                           ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 2                           ;
-; boundary_port         ; 22                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri May 03 09:22:04 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PWM -c PWM
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon May 06 00:06:05 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PWM -c PWM --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file pwm.sv
-    Info (12023): Found entity 1: PWM File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/PWM.sv Line: 1
+    Info (12023): Found entity 1: PWM File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/PWM.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pwm_tb.sv
-    Info (12023): Found entity 1: PWM_tb File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/PWM_tb.sv Line: 1
+    Info (12023): Found entity 1: PWM_tb File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/PWM_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file counter.sv
-    Info (12023): Found entity 1: counter File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/counter.sv Line: 1
+    Info (12023): Found entity 1: counter File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/counter.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file spi_slave.sv
-    Info (12023): Found entity 1: spi_slave File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 1
-Info (12127): Elaborating entity "spi_slave" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(26): truncated value with size 32 to match size of target (3) File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 26
-Warning (10034): Output port "data_received" at spi_slave.sv(8) has no driver File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "data_received[0]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-    Warning (13410): Pin "data_received[1]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-    Warning (13410): Pin "data_received[2]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-    Warning (13410): Pin "data_received[3]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-    Warning (13410): Pin "data_received[4]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-    Warning (13410): Pin "data_received[5]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-    Warning (13410): Pin "data_received[6]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-    Warning (13410): Pin "data_received[7]" is stuck at GND File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 8
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 2
-    Warning (15610): No output dependent on input pin "MOSI" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 4
-Info (21057): Implemented 28 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 6 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4865 megabytes
-    Info: Processing ended: Fri May 03 09:22:20 2024
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:17
+    Info (12023): Found entity 1: spi_slave File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/spi_slave.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sumador_medio.sv
+    Info (12023): Found entity 1: Sumador_medio File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Sumador_medio.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sumador_completo.sv
+    Info (12023): Found entity 1: Sumador_completo File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Sumador_completo.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file restador_medio.sv
+    Info (12023): Found entity 1: Restador_medio File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Restador_medio.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file restador_completo.sv
+    Info (12023): Found entity 1: Restador_completo File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Restador_completo.sv Line: 1
+Warning (12018): Entity "AND" will be ignored because it conflicts with Quartus Prime primitive name File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/AND.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and.sv
+Warning (12018): Entity "OR" will be ignored because it conflicts with Quartus Prime primitive name File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/OR.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or.sv
+Info (12021): Found 1 design units, including 1 entities, in source file restador4bits.sv
+    Info (12023): Found entity 1: restador4bits File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/restador4bits.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sumador4bits.sv
+    Info (12023): Found entity 1: sumador4bits File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/sumador4bits.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: ALU File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.sv
+    Info (12023): Found entity 1: ALU_tb File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decodificador4.sv
+    Info (12023): Found entity 1: Decodificador4 File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Decodificador4.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decodificadorbinario.sv
+    Info (12023): Found entity 1: DecodificadorBinario File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/DecodificadorBinario.sv Line: 1
+Info (12127): Elaborating entity "ALU" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at ALU.sv(75): truncated value with size 32 to match size of target (4) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 75
+Warning (10240): Verilog HDL Always Construct warning at ALU.sv(64): inferring latch(es) for variable "x", which holds its previous value in one or more paths through the always construct File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 64
+Warning (10240): Verilog HDL Always Construct warning at ALU.sv(64): inferring latch(es) for variable "carry", which holds its previous value in one or more paths through the always construct File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 64
+Warning (10240): Verilog HDL Always Construct warning at ALU.sv(64): inferring latch(es) for variable "y", which holds its previous value in one or more paths through the always construct File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 64
+Info (10041): Inferred latch for "carry" at ALU.sv(64) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 64
+Info (10041): Inferred latch for "y[0]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[1]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[2]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[3]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[4]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[5]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[6]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[7]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[8]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[9]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[10]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[11]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[12]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[13]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[14]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[15]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[16]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[17]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[18]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[19]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[20]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[21]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[22]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[23]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[24]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[25]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[26]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[27]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[28]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[29]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[30]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "y[31]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[0]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[1]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[2]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[3]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[4]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[5]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[6]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[7]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[8]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[9]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[10]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[11]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[12]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[13]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[14]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[15]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[16]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[17]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[18]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[19]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[20]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[21]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[22]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[23]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[24]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[25]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[26]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[27]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[28]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[29]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[30]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (10041): Inferred latch for "x[31]" at ALU.sv(107) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 107
+Info (12128): Elaborating entity "sumador4bits" for hierarchy "sumador4bits:UUT" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at sumador4bits.sv(34): truncated value with size 5 to match size of target (4) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/sumador4bits.sv Line: 34
+Warning (10034): Output port "salida7seg0" at sumador4bits.sv(6) has no driver File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/sumador4bits.sv Line: 6
+Warning (10034): Output port "salida7seg1" at sumador4bits.sv(8) has no driver File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/sumador4bits.sv Line: 8
+Info (12128): Elaborating entity "Sumador_medio" for hierarchy "sumador4bits:UUT|Sumador_medio:U1" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/sumador4bits.sv Line: 19
+Info (12128): Elaborating entity "Sumador_completo" for hierarchy "sumador4bits:UUT|Sumador_completo:for_loop[1].U2" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/sumador4bits.sv Line: 30
+Info (12128): Elaborating entity "restador4bits" for hierarchy "restador4bits:UUT_r" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at restador4bits.sv(38): truncated value with size 5 to match size of target (4) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/restador4bits.sv Line: 38
+Warning (10034): Output port "salida7seg0" at restador4bits.sv(6) has no driver File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/restador4bits.sv Line: 6
+Warning (10034): Output port "salida7seg1" at restador4bits.sv(9) has no driver File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/restador4bits.sv Line: 9
+Info (12128): Elaborating entity "Restador_medio" for hierarchy "restador4bits:UUT_r|Restador_medio:U1" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/restador4bits.sv Line: 23
+Info (12128): Elaborating entity "Restador_completo" for hierarchy "restador4bits:UUT_r|Restador_completo:for_loop[1].U2" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/restador4bits.sv Line: 34
+Info (12128): Elaborating entity "Decodificador4" for hierarchy "Decodificador4:deco" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv Line: 48
+Info (12128): Elaborating entity "DecodificadorBinario" for hierarchy "Decodificador4:deco|DecodificadorBinario:for_loop[0].U1" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Decodificador4.sv Line: 15
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Mon May 06 00:06:19 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:31
 
 

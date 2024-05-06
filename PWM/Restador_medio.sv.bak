@@ -1,0 +1,10 @@
+module Restador_medio (
+			input logic A, B, 
+			output logic Cout, Resta
+);
+always_comb begin
+	Cout = (not A) and B;
+	Resta = A xor B;
+end
+
+endmodule

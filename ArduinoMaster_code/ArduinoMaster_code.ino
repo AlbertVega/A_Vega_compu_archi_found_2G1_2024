@@ -1,39 +1,65 @@
 #include <SPI.h>
 
-//-- Pin usado para la seleccion del esclavo
+// Pin usado para la seleccion del esclavo
 #define SS 10
+bool handshakeDone;
+bool done;
+const byte handshakeMessage = 0b11111111;
+byte sentMessage;
+
 
 void setup() 
 {
-  //-- Inicializar SPI
+  pinMode(SS, OUTPUT);
+  digitalWrite(SS, HIGH);
   SPI.begin();
-  SPI.beginTransaction (SPISettings (2000000, MSBFIRST, SPI_MODE0));
-
+  SPI.beginTransaction(SPISettings (2000000, MSBFIRST, SPI_MODE0));
+  handshakeDone = false;
+  done = false;
   Serial.begin(9600);
 }
 
-//-- Realizar una transaccion. Se envia un dato
-//-- y se devuelve lo recibido
-uint8_t spi_transaction(uint8_t tx_value)
+
+byte transferData(const byte dato)
 {
-  //-- Activar el esclavo
-  digitalWrite(SS, LOW);
-
-  uint8_t rx_value = SPI.transfer(tx_value); 
-
-  //-- Desactivar el esclavo
-  digitalWrite(SS, HIGH);
-
-  return rx_value;
+  byte recibido = SPI.transfer(dato);
+  delayMicroseconds(20);
+  return recibido;
 }
 
 void loop() 
 {
+  if (!done){
+    if (!handshakeDone) {
 
-  //-- Enviar el valor 0xAA
-  uint8_t rx1 = spi_transaction(0xAA);
-  Serial.print("Send: 0xAA. Received: ");
-  Serial.println(rx1, HEX);
-  delay(500);
+      digitalWrite(SS, LOW); //enable slave select
+      byte response = transferData(handshakeMessage); //send handshake
+      delay(500);
+      digitalWrite(SS, HIGH); //disable slave select
+      
 
+      Serial.println("Mensaje enviado: ");
+      Serial.println(handshakeMessage);
+      Serial.print("Respuesta: ");
+      Serial.println(response);
+      // Check if the response is the expected handshake message:
+      if (response == handshakeMessage) {
+        // Handshake successful
+        Serial.println("Handshake exitoso!");
+        handshakeDone = true;
+      } 
+    } else {
+      digitalWrite(SS, LOW); //enable slave select
+      sentMessage = SPI.transfer(0b10011000); 
+      //                           ^^^^^^^^
+      //                          15
+      Serial.println(sentMessage);
+      sentMessage= SPI.transfer(0b10000000); 
+      //                          ^^^^^^^^
+      //                          76543210
+      Serial.println(sentMessage);
+      digitalWrite(SS, HIGH); //disable slave select
+      done = true;
+    }
+  }
 }

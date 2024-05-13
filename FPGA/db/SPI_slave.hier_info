@@ -3,19 +3,19 @@ clk => clk.IN1
 SCLK => SCLK.IN1
 MOSI => MOSI.IN1
 SS => SS.IN1
-MISO <= SPI_slave:SPI_slave_inst.MISO
-N <= ALU:ALU_inst.N
-Z <= ALU:ALU_inst.Z
-C <= ALU:ALU_inst.C
-V <= ALU:ALU_inst.V
-led <= PWM:PWM_inst.led
-display[0] <= BCD_module:BCD_module_inst.display
-display[1] <= BCD_module:BCD_module_inst.display
-display[2] <= BCD_module:BCD_module_inst.display
-display[3] <= BCD_module:BCD_module_inst.display
-display[4] <= BCD_module:BCD_module_inst.display
-display[5] <= BCD_module:BCD_module_inst.display
-display[6] <= BCD_module:BCD_module_inst.display
+MISO << SPI_slave:SPI_slave_inst.MISO
+N << ALU:ALU_inst.N
+Z << ALU:ALU_inst.Z
+C << ALU:ALU_inst.C
+V << ALU:ALU_inst.V
+led << PWM:PWM_inst.led
+display[0] << BCD_module:BCD_module_inst.display
+display[1] << BCD_module:BCD_module_inst.display
+display[2] << BCD_module:BCD_module_inst.display
+display[3] << BCD_module:BCD_module_inst.display
+display[4] << BCD_module:BCD_module_inst.display
+display[5] << BCD_module:BCD_module_inst.display
+display[6] << BCD_module:BCD_module_inst.display
 
 
 |main|SPI_slave:SPI_slave_inst
@@ -309,13 +309,13 @@ A => display.IN0
 A => display.IN0
 A => display.IN0
 A => display.IN0
-B => display.IN0
-B => display.IN0
-B => display.IN1
 B => display.IN1
 B => display.IN1
 B => display.IN0
+B => display.IN0
 B => display.IN1
+B => display.IN1
+B => display.IN0
 C => display.IN1
 C => display.IN1
 C => display.IN1

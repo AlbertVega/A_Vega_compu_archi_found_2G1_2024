@@ -11,6 +11,7 @@ module main(
 
 reg [9:0] bits;
 logic [3:0] Result;
+logic [3:0] Result_temp;
 
 logic [3:0] a;
 logic [3:0] b;
@@ -28,6 +29,11 @@ assign b[3] = bits[5];
 
 assign Sel[0] = bits[0];
 assign Sel[1] = bits[1];
+
+assign Result_temp[0] = Result[0];
+assign Result_temp[1] = Result[1];
+assign Result_temp[2] = Result[2];
+assign Result_temp[3] = Result[3];
 
 SPI_slave SPI_slave_inst(
 	.SCLK(SCLK),
@@ -56,10 +62,10 @@ PWM PWM_inst(
 );
 
 BCD_module BCD_module_inst(
-	.A(Result[3]),
-	.B(Result[2]),
-	.C(Result[1]),
-	.D(Result[0]),
+	.A(Result_temp[3]),
+	.B(Result_temp[2]),
+	.C(Result_temp[1]),
+	.D(Result_temp[0]),
 	.display(display)
 );
 

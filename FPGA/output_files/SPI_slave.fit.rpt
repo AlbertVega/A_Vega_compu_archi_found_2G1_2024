@@ -1,5 +1,5 @@
 Fitter report for SPI_slave
-Mon May 13 00:17:14 2024
+Mon May 13 02:08:32 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Mon May 13 00:17:14 2024       ;
+; Fitter Status                   ; Successful - Mon May 13 02:08:32 2024       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; SPI_slave                                   ;
 ; Top-level Entity Name           ; main                                        ;
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 16 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 29                                          ;
+; Total registers                 ; 31                                          ;
 ; Total pins                      ; 17 / 457 ( 4 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -159,7 +159,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.2%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processors 4-8         ;   0.1%      ;
 +----------------------------+-------------+
@@ -172,7 +172,9 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------+------------------+-----------------------+
 ; clk~inputCLKENA0                  ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                             ;                  ;                       ;
 ; PWM:PWM_inst|Counter[0]           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:PWM_inst|Counter[0]~DUPLICATE           ;                  ;                       ;
+; PWM:PWM_inst|Counter[1]           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:PWM_inst|Counter[1]~DUPLICATE           ;                  ;                       ;
 ; PWM:PWM_inst|Counter[2]           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:PWM_inst|Counter[2]~DUPLICATE           ;                  ;                       ;
+; SPI_slave:SPI_slave_inst|bits[6]  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; SPI_slave:SPI_slave_inst|bits[6]~DUPLICATE  ;                  ;                       ;
 ; SPI_slave:SPI_slave_inst|bits[11] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; SPI_slave:SPI_slave_inst|bits[11]~DUPLICATE ;                  ;                       ;
 ; SPI_slave:SPI_slave_inst|bits[12] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; SPI_slave:SPI_slave_inst|bits[12]~DUPLICATE ;                  ;                       ;
 ; SPI_slave:SPI_slave_inst|bits[14] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; SPI_slave:SPI_slave_inst|bits[14]~DUPLICATE ;                  ;                       ;
@@ -241,12 +243,12 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 16 / 32,070        ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 16                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 18 / 32,070        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 9                  ;       ;
-;         [b] ALMs used for LUT logic                         ; 5                  ;       ;
-;         [c] ALMs used for registers                         ; 4                  ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 19 / 32,070        ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 7                  ;       ;
+;         [b] ALMs used for LUT logic                         ; 7                  ;       ;
+;         [c] ALMs used for registers                         ; 5                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 2 / 32,070         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 32,070         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32,070         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -267,13 +269,13 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ;     -- <=3 input functions                                  ; 5                  ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 29                 ;       ;
+; Dedicated logic registers                                   ; 31                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
 ;         -- Primary logic registers                          ; 24 / 64,140        ; < 1 % ;
-;         -- Secondary logic registers                        ; 5 / 64,140         ; < 1 % ;
+;         -- Secondary logic registers                        ; 7 / 64,140         ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 24                 ;       ;
-;         -- Routing optimization registers                   ; 5                  ;       ;
+;         -- Routing optimization registers                   ; 7                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 17 / 457           ; 4 %   ;
@@ -329,11 +331,11 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.9% / 0.9% / 0.6% ;       ;
-; Maximum fan-out                                             ; 19                 ;       ;
-; Highest non-global fan-out                                  ; 19                 ;       ;
-; Total fan-out                                               ; 194                ;       ;
-; Average fan-out                                             ; 2.16               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.4% / 0.5% / 0.6% ;       ;
+; Maximum fan-out                                             ; 20                 ;       ;
+; Highest non-global fan-out                                  ; 20                 ;       ;
+; Total fan-out                                               ; 198                ;       ;
+; Average fan-out                                             ; 2.15               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -344,12 +346,12 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 16 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 16                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 18 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 9                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 5                    ; 0                              ;
-;         [c] ALMs used for registers                         ; 4                    ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 19 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 7                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 7                    ; 0                              ;
+;         [c] ALMs used for registers                         ; 5                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 2 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32070 ( 0 % )    ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -376,10 +378,10 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
 ;         -- Primary logic registers                          ; 24 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 5 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 7 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
 ;         -- Design implementation registers                  ; 24                   ; 0                              ;
-;         -- Routing optimization registers                   ; 5                    ; 0                              ;
+;         -- Routing optimization registers                   ; 7                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
@@ -396,8 +398,8 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 194                  ; 0                              ;
-;     -- Registered Connections                               ; 81                   ; 0                              ;
+;     -- Total Connections                                    ; 198                  ; 0                              ;
+;     -- Registered Connections                               ; 82                   ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -432,7 +434,7 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; MOSI ; AC18  ; 4A       ; 64           ; 0            ; 0            ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SCLK ; Y17   ; 4A       ; 68           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SS   ; AD17  ; 4A       ; 64           ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; clk  ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 10                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; clk  ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 11                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -446,13 +448,13 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; N          ; W16   ; 4A       ; 52           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; V          ; V18   ; 4A       ; 80           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; Z          ; V16   ; 4A       ; 52           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; display[0] ; AE26  ; 5A       ; 89           ; 8            ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; display[1] ; AE27  ; 5A       ; 89           ; 11           ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; display[2] ; AE28  ; 5A       ; 89           ; 11           ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; display[0] ; AH28  ; 5A       ; 89           ; 4            ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; display[1] ; AG28  ; 5A       ; 89           ; 13           ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; display[2] ; AF28  ; 5A       ; 89           ; 13           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; display[3] ; AG27  ; 5A       ; 89           ; 4            ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; display[4] ; AF28  ; 5A       ; 89           ; 13           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; display[5] ; AG28  ; 5A       ; 89           ; 13           ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; display[6] ; AH28  ; 5A       ; 89           ; 4            ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; display[4] ; AE28  ; 5A       ; 89           ; 11           ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; display[5] ; AE27  ; 5A       ; 89           ; 11           ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; display[6] ; AE26  ; 5A       ; 89           ; 8            ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; led        ; Y21   ; 5A       ; 89           ; 6            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 +------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
@@ -657,9 +659,9 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; AE23     ; 189        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AE24     ; 209        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AE25     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AE26     ; 220        ; 5A             ; display[0]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
-; AE27     ; 229        ; 5A             ; display[1]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
-; AE28     ; 231        ; 5A             ; display[2]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
+; AE26     ; 220        ; 5A             ; display[6]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
+; AE27     ; 229        ; 5A             ; display[5]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
+; AE28     ; 231        ; 5A             ; display[4]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
 ; AE29     ; 253        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AE30     ;            ; 5B             ; VCCIO5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AF1      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -689,7 +691,7 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; AF25     ; 206        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF26     ; 204        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF27     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AF28     ; 235        ; 5A             ; display[4]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
+; AF28     ; 235        ; 5A             ; display[2]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
 ; AF29     ; 237        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AF30     ; 239        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AG1      ; 71         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -719,7 +721,7 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; AG25     ; 190        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG26     ; 203        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG27     ; 212        ; 5A             ; display[3]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
-; AG28     ; 233        ; 5A             ; display[5]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
+; AG28     ; 233        ; 5A             ; display[1]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
 ; AG29     ;            ; 5A             ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AG30     ; 243        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AH1      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -749,7 +751,7 @@ The pin-out file can be found in C:/Users/alber/OneDrive/Documentos/GitHub/A_Veg
 ; AH25     ; 188        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH26     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AH27     ; 201        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AH28     ; 214        ; 5A             ; display[6]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
+; AH28     ; 214        ; 5A             ; display[0]                      ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
 ; AH29     ; 218        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AH30     ; 241        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AJ1      ; 79         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -1414,21 +1416,21 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node             ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Entity Name       ; Library Name ;
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------------------+-------------------+--------------+
-; |main                                  ; 16.0 (0.5)           ; 17.0 (0.5)                       ; 1.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 26 (1)              ; 29 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 17   ; 0            ; |main                                                                 ; main              ; work         ;
-;    |ALU:ALU_inst|                      ; 5.0 (1.3)            ; 5.0 (2.0)                        ; 0.0 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 11 (3)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst                                                    ; ALU               ; work         ;
+; |main                                  ; 16.0 (0.5)           ; 18.5 (0.5)                       ; 2.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 26 (1)              ; 31 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 17   ; 0            ; |main                                                                 ; main              ; work         ;
+;    |ALU:ALU_inst|                      ; 4.4 (0.9)            ; 4.4 (0.9)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 11 (3)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst                                                    ; ALU               ; work         ;
 ;       |mux4to1:mux_bit0|               ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit0                                   ; mux4to1           ; work         ;
-;       |mux4to1:mux_bit1|               ; 0.4 (0.4)            ; 0.4 (0.4)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit1                                   ; mux4to1           ; work         ;
+;       |mux4to1:mux_bit1|               ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit1                                   ; mux4to1           ; work         ;
 ;       |mux4to1:mux_bit2|               ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit2                                   ; mux4to1           ; work         ;
 ;       |mux4to1:mux_bit3|               ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit3                                   ; mux4to1           ; work         ;
-;       |restador4bits:restador|         ; 0.6 (0.0)            ; 0.6 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador                             ; restador4bits     ; work         ;
+;       |restador4bits:restador|         ; 0.8 (0.0)            ; 0.9 (0.0)                        ; 0.1 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador                             ; restador4bits     ; work         ;
 ;          |Restador_completo:restador1| ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador|Restador_completo:restador1 ; Restador_completo ; work         ;
-;          |Restador_completo:restador2| ; 0.4 (0.4)            ; 0.4 (0.4)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador|Restador_completo:restador2 ; Restador_completo ; work         ;
-;       |sumador4bits:sumador|           ; 0.7 (0.0)            ; 0.7 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador                               ; sumador4bits      ; work         ;
-;          |Sumador_completo:Sumador1|   ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador1     ; Sumador_completo  ; work         ;
-;          |Sumador_completo:Sumador2|   ; 0.4 (0.4)            ; 0.4 (0.4)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador2     ; Sumador_completo  ; work         ;
-;    |BCD_module:BCD_module_inst|        ; 2.4 (2.4)            ; 2.4 (2.4)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|BCD_module:BCD_module_inst                                      ; BCD_module        ; work         ;
-;    |PWM:PWM_inst|                      ; 3.7 (3.7)            ; 4.2 (4.2)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|PWM:PWM_inst                                                    ; PWM               ; work         ;
-;    |SPI_slave:SPI_slave_inst|          ; 3.3 (3.3)            ; 4.9 (4.9)                        ; 1.5 (1.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 19 (19)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|SPI_slave:SPI_slave_inst                                        ; SPI_slave         ; work         ;
+;          |Restador_completo:restador2| ; 0.5 (0.5)            ; 0.7 (0.7)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador|Restador_completo:restador2 ; Restador_completo ; work         ;
+;       |sumador4bits:sumador|           ; 0.8 (0.0)            ; 0.8 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador                               ; sumador4bits      ; work         ;
+;          |Sumador_completo:Sumador1|   ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador1     ; Sumador_completo  ; work         ;
+;          |Sumador_completo:Sumador2|   ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador2     ; Sumador_completo  ; work         ;
+;    |BCD_module:BCD_module_inst|        ; 3.3 (3.3)            ; 3.3 (3.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|BCD_module:BCD_module_inst                                      ; BCD_module        ; work         ;
+;    |PWM:PWM_inst|                      ; 3.0 (3.0)            ; 5.0 (5.0)                        ; 2.0 (2.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 11 (11)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|PWM:PWM_inst                                                    ; PWM               ; work         ;
+;    |SPI_slave:SPI_slave_inst|          ; 4.0 (4.0)            ; 5.4 (5.4)                        ; 1.4 (1.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 20 (20)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|SPI_slave:SPI_slave_inst                                        ; SPI_slave         ; work         ;
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1451,7 +1453,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; display[4] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; display[5] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; display[6] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; MOSI       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; MOSI       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; clk        ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SCLK       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SS         ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
@@ -1464,8 +1466,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                       ; Pad To Core Index ; Setting ;
 +-------------------------------------------+-------------------+---------+
 ; MOSI                                      ;                   ;         ;
-;      - SPI_slave:SPI_slave_inst|bits[0]   ; 0                 ; 0       ;
-;      - MISO~output                        ; 0                 ; 0       ;
+;      - SPI_slave:SPI_slave_inst|bits[0]   ; 1                 ; 0       ;
+;      - MISO~output                        ; 1                 ; 0       ;
 ; clk                                       ;                   ;         ;
 ; SCLK                                      ;                   ;         ;
 ;      - SPI_slave:SPI_slave_inst|always0~0 ; 1                 ; 0       ;
@@ -1479,8 +1481,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------+--------------------+---------+-------+--------+----------------------+------------------+---------------------------+
 ; Name                               ; Location           ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------+--------------------+---------+-------+--------+----------------------+------------------+---------------------------+
-; SPI_slave:SPI_slave_inst|always0~0 ; LABCELL_X71_Y1_N27 ; 19      ; Clock ; no     ; --                   ; --               ; --                        ;
-; clk                                ; PIN_AF14           ; 10      ; Clock ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; SPI_slave:SPI_slave_inst|always0~0 ; LABCELL_X67_Y1_N54 ; 20      ; Clock ; no     ; --                   ; --               ; --                        ;
+; clk                                ; PIN_AF14           ; 11      ; Clock ; yes    ; Global Clock         ; GCLK6            ; --                        ;
 +------------------------------------+--------------------+---------+-------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1489,7 +1491,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_AF14 ; 10      ; Global Clock         ; GCLK6            ; --                        ;
+; clk  ; PIN_AF14 ; 11      ; Global Clock         ; GCLK6            ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1498,14 +1500,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+------------------------+
 ; Routing Resource Type                       ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Block interconnects                         ; 67 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 1 / 13,420 ( < 1 % )   ;
-; C2 interconnects                            ; 16 / 119,108 ( < 1 % ) ;
-; C4 interconnects                            ; 18 / 56,300 ( < 1 % )  ;
+; Block interconnects                         ; 59 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 0 / 13,420 ( 0 % )     ;
+; C2 interconnects                            ; 21 / 119,108 ( < 1 % ) ;
+; C4 interconnects                            ; 22 / 56,300 ( < 1 % )  ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )         ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )         ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )         ;
-; Direct links                                ; 11 / 289,320 ( < 1 % ) ;
+; Direct links                                ; 7 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 1 / 16 ( 6 % )         ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )          ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )          ;
@@ -1561,13 +1563,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )          ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )         ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )         ;
-; Local interconnects                         ; 16 / 84,580 ( < 1 % )  ;
+; Local interconnects                         ; 15 / 84,580 ( < 1 % )  ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )         ;
-; R14 interconnects                           ; 8 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 9 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 42 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 52 / 266,960 ( < 1 % ) ;
-; Spine clocks                                ; 1 / 360 ( < 1 % )      ;
+; R14 interconnects                           ; 6 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 6 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 44 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 49 / 266,960 ( < 1 % ) ;
+; Spine clocks                                ; 2 / 360 ( < 1 % )      ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )     ;
 +---------------------------------------------+------------------------+
 
@@ -1699,10 +1701,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; SCLK            ; clk,I/O              ; 11.6              ;
+; SCLK            ; clk,I/O              ; 13.9              ;
 ; SCLK            ; SCLK                 ; 8.2               ;
-; SCLK            ; clk                  ; 1.2               ;
-; clk             ; clk                  ; 1.1               ;
+; clk             ; clk                  ; 1.6               ;
+; SCLK            ; clk                  ; 1.4               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1713,25 +1715,25 @@ This will disable optimization of problematic paths and expose them for further 
 +-----------------------------------+----------------------------------+-------------------+
 ; Source Register                   ; Destination Register             ; Delay Added in ns ;
 +-----------------------------------+----------------------------------+-------------------+
-; SPI_slave:SPI_slave_inst|bits[6]  ; PWM:PWM_inst|dutycycle[3]        ; 0.809             ;
-; SPI_slave:SPI_slave_inst|bits[15] ; PWM:PWM_inst|dutycycle[3]        ; 0.806             ;
-; SPI_slave:SPI_slave_inst|bits[12] ; PWM:PWM_inst|dutycycle[1]        ; 0.790             ;
-; SPI_slave:SPI_slave_inst|bits[8]  ; PWM:PWM_inst|dutycycle[1]        ; 0.789             ;
-; SPI_slave:SPI_slave_inst|bits[11] ; PWM:PWM_inst|dutycycle[3]        ; 0.762             ;
-; SPI_slave:SPI_slave_inst|bits[9]  ; PWM:PWM_inst|dutycycle[1]        ; 0.761             ;
-; SPI_slave:SPI_slave_inst|bits[13] ; PWM:PWM_inst|dutycycle[1]        ; 0.745             ;
-; SPI_slave:SPI_slave_inst|bits[10] ; PWM:PWM_inst|dutycycle[2]        ; 0.737             ;
-; SPI_slave:SPI_slave_inst|bits[7]  ; PWM:PWM_inst|dutycycle[0]        ; 0.728             ;
-; SPI_slave:SPI_slave_inst|bits[14] ; PWM:PWM_inst|dutycycle[2]        ; 0.723             ;
-; SPI_slave:SPI_slave_inst|bits[4]  ; SPI_slave:SPI_slave_inst|bits[5] ; 0.554             ;
-; SPI_slave:SPI_slave_inst|bits[2]  ; SPI_slave:SPI_slave_inst|bits[3] ; 0.550             ;
-; SPI_slave:SPI_slave_inst|bits[5]  ; SPI_slave:SPI_slave_inst|bits[6] ; 0.550             ;
-; SPI_slave:SPI_slave_inst|bits[1]  ; SPI_slave:SPI_slave_inst|bits[2] ; 0.544             ;
-; SPI_slave:SPI_slave_inst|bits[3]  ; SPI_slave:SPI_slave_inst|bits[4] ; 0.544             ;
-; SPI_slave:SPI_slave_inst|bits[0]  ; SPI_slave:SPI_slave_inst|bits[1] ; 0.540             ;
-; PWM:PWM_inst|Counter[1]           ; PWM:PWM_inst|Counter[3]          ; 0.197             ;
-; PWM:PWM_inst|Counter[0]           ; PWM:PWM_inst|Counter[2]          ; 0.197             ;
-; PWM:PWM_inst|Counter[2]           ; PWM:PWM_inst|Counter[3]          ; 0.193             ;
+; SPI_slave:SPI_slave_inst|bits[6]  ; PWM:PWM_inst|dutycycle[3]        ; 0.973             ;
+; SPI_slave:SPI_slave_inst|bits[15] ; PWM:PWM_inst|dutycycle[3]        ; 0.971             ;
+; SPI_slave:SPI_slave_inst|bits[9]  ; PWM:PWM_inst|dutycycle[3]        ; 0.935             ;
+; SPI_slave:SPI_slave_inst|bits[11] ; PWM:PWM_inst|dutycycle[3]        ; 0.933             ;
+; SPI_slave:SPI_slave_inst|bits[10] ; PWM:PWM_inst|dutycycle[3]        ; 0.915             ;
+; SPI_slave:SPI_slave_inst|bits[7]  ; PWM:PWM_inst|dutycycle[3]        ; 0.897             ;
+; SPI_slave:SPI_slave_inst|bits[13] ; PWM:PWM_inst|dutycycle[3]        ; 0.871             ;
+; SPI_slave:SPI_slave_inst|bits[14] ; PWM:PWM_inst|dutycycle[2]        ; 0.868             ;
+; SPI_slave:SPI_slave_inst|bits[12] ; PWM:PWM_inst|dutycycle[1]        ; 0.835             ;
+; SPI_slave:SPI_slave_inst|bits[8]  ; PWM:PWM_inst|dutycycle[1]        ; 0.833             ;
+; SPI_slave:SPI_slave_inst|bits[1]  ; SPI_slave:SPI_slave_inst|bits[2] ; 0.554             ;
+; SPI_slave:SPI_slave_inst|bits[2]  ; SPI_slave:SPI_slave_inst|bits[3] ; 0.554             ;
+; SPI_slave:SPI_slave_inst|bits[3]  ; SPI_slave:SPI_slave_inst|bits[4] ; 0.554             ;
+; SPI_slave:SPI_slave_inst|bits[4]  ; SPI_slave:SPI_slave_inst|bits[5] ; 0.550             ;
+; SPI_slave:SPI_slave_inst|bits[0]  ; SPI_slave:SPI_slave_inst|bits[1] ; 0.544             ;
+; SPI_slave:SPI_slave_inst|bits[5]  ; SPI_slave:SPI_slave_inst|bits[6] ; 0.544             ;
+; PWM:PWM_inst|Counter[0]           ; PWM:PWM_inst|Counter[3]          ; 0.313             ;
+; PWM:PWM_inst|Counter[1]           ; PWM:PWM_inst|Counter[3]          ; 0.310             ;
+; PWM:PWM_inst|Counter[2]           ; PWM:PWM_inst|Counter[3]          ; 0.267             ;
 +-----------------------------------+----------------------------------+-------------------+
 Note: This table only shows the top 19 path(s) that have the largest delay added for hold.
 
@@ -1766,7 +1768,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "bits_out[8]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "btn" is assigned to location or region, but does not exist in design
     Warning (15706): Node "rst" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:17
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:19
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
@@ -1775,11 +1777,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X67_Y0 to location X77_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X56_Y0 to location X66_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
-Info (11888): Total time spent on timing analysis during the Fitter is 0.48 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.54 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1788,10 +1790,10 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/output_files/SPI_slave.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 6929 megabytes
-    Info: Processing ended: Mon May 13 00:17:15 2024
-    Info: Elapsed time: 00:00:53
-    Info: Total CPU time (on all processors): 00:01:27
+    Info: Peak virtual memory: 6977 megabytes
+    Info: Processing ended: Mon May 13 02:08:32 2024
+    Info: Elapsed time: 00:00:58
+    Info: Total CPU time (on all processors): 00:01:28
 
 
 +----------------------------+

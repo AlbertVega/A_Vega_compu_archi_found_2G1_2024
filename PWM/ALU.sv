@@ -1,123 +1,92 @@
-module ALU(input logic [3:0] in1,
-			  input logic [3:0] in2,
-			  input logic [3:0] mode,
-			  output logic neg,
-			  output logic cero,
-			  output logic carry,
-			  output logic des,
-			  output logic [1:0] [3:0] num,
-			  output logic [6:0] mode_seg,
-			  output logic [1:0] [6:0] out);
+module ALU(input logic [3:0] a,
+			  input logic [3:0] b,
+			  input logic [1:0] Sel,
+			  
+			  output logic [3:0] Result,
+			  output logic N, Z, C, V
+);
+	
+	logic [3:0] adder_result;
+   logic adder_cout;
+	
+	logic [3:0] subtractor_result;
+   logic subtractor_cout;
+	
+	logic [3:0] and_result;
+	logic [3:0] or_result;
+	
 
-	logic [3:0] Resultado_sum;
-	logic [3:0] Resultado_res;
-	//logic [3:0] Resultado_AND;
-	//logic [3:0] Resultado_OR;
-	logic Cout_sum;
-	logic Cout_res;
-	//logic Cout_AND;
-	//logic Cout_OR;
-	logic [1:0] [6:0] seg7_1;
-	integer x, y;
+	//Instancia para el sumador
 	
-	sumador4bits UUT(
-		.Ent1(in1),
-		.Ent2(in2),
-		.Resultado(Resultado_sum),
-		.Cout(Cout_sum)
+	sumador4bits sumador(
+		.A(a),
+		.B(b),
+		.Cin(1'b0),
+		.sum(adder_result),
+		.Cout(adder_cout)
 	);
-	restador4bits UUT_r (
-		.Ent1(in1),
-		.Ent2(in2),
-		.Resultado(Resultado_res),
-		.Cout(Cout_res)
-	);
-	 /*AND(
-		.A(in1),
-		.B(in2),
-      .RestAND(Resultado_AND)
-    );
-	 OR (
-		.A(in1),
-		.B(in2),
-      .RestOR(Resultado_OR)
-    );*/
-	Decodificador4 deco (
-		.num_all(num),
-		.seg(seg7_1)
-	);
-	initial begin
-		out[0] = 7'b1111111;
-		out[1] = 7'b1111111;
-		num = 0;
-		neg = 0;
-		cero = 0;
-		carry = 0;
-		des = 0;
-		seg7_1 = 0;
-		x = 0;
-		y=0;
-	end
 	
-	always @ (*)
-	begin
-		case (mode)
-			4'b0000: begin // Suma
-							mode_seg = 7'b1000000;
-							num[0] = Resultado_sum;
-							num[1] = Cout_sum;
-							carry = Cout_sum;
-							neg = 0;
-					  end
-			4'b0001: begin // Resta
-							mode_seg = 7'b1111001;
-							if (Cout_res) begin
-								num[0] = ~Resultado_res + 1;
-							end else begin
-								num[0] = Resultado_res;
-							end
-							num[1] = 0;
-							carry = 0;
-							neg = Cout_res;
-					  end
-			4'b0011: begin // AND
-							mode_seg = 7'b0110000;
-							carry = 0;
-							num = in1 & in2;
-							neg = 0;
-					  end
-			4'b0100: begin	// OR
-							mode_seg = 7'b0011001;
-							num = in1 | in2;
-							neg = 0;
-					  end
-			default: begin // Error
-							num = 1;
-							mode_seg = 7'b0001001;
-							x = 1;
-							neg = 0;
-						end
-			
-		endcase
-		if (num == 0) begin
-			cero = 1;
-			out[0] = 7'b1000000;
-			out[1] = 7'b1000000;
-		end else begin
-			cero = 0;
-			if (x) begin
-				x = 0;
-				out[0] = 7'b1111111;
-				out[1] = 7'b1111111;
-			end else if (y) begin
-				y = 0;
-				out[0]= 7'b0101111;
-				out[1]= 7'b0000110;				
-			end else begin
-				out = seg7_1;
-			end
-		end
-	end
+	//Instancia para el restador
 	
-			
+	restador4bits restador(
+		.A(a),
+		.B(b),
+		.Cin(1'b0),
+		.res(subtractor_result),
+		.Cout(subtractor_cout)
+	);
+	
+	assign and_result = a & b;
+	
+	assign or_result = a | b;
+
+	
+	// Instancia del multiplexor
+   mux4to1 mux_bit0 (
+       .S0(Sel[0]),      
+		 .S1(Sel[1]),		 
+       .D0(adder_result[0]), 
+       .D1(subtractor_result[0]),
+       .D2(and_result[0]),
+       .D3(or_result[0]),
+       .out(Result[0])                  
+   );
+	
+	mux4to1 mux_bit1 (
+       .S0(Sel[0]),      
+		 .S1(Sel[1]),                       
+       .D0(adder_result[1]), 
+       .D1(subtractor_result[1]),
+       .D2(and_result[1]),
+       .D3(or_result[1]),
+       .out(Result[1])                  
+   );
+	
+	mux4to1 mux_bit2 (
+       .S0(Sel[0]),      
+		 .S1(Sel[1]),                       
+       .D0(adder_result[2]), 
+       .D1(subtractor_result[2]),
+       .D2(and_result[2]),
+       .D3(or_result[2]),
+       .out(Result[2])                  
+   );
+	
+	mux4to1 mux_bit3 (
+       .S0(Sel[0]),      
+		 .S1(Sel[1]),                       
+       .D0(adder_result[3]), 
+       .D1(subtractor_result[3]),
+       .D2(and_result[3]),
+       .D3(or_result[3]),
+       .out(Result[3])                  
+   );
+	 
+	// asignacion de flags
+
+	assign C = ~Sel[1] & (adder_cout | subtractor_cout);
+	assign N = Result[3];
+	assign Z = ~Result[3] & ~Result[2] & ~Result[1] & ~Result[0];
+	assign V = ((~Sel[0] ^ ~a[3]) ^ ~b[3]) & (a[3] ^ (adder_result[3] | subtractor_result[3])) & ~Sel[1] ;
+	
 endmodule

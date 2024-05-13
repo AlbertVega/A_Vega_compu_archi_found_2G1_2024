@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/Users/Alisson RM/Desktop/PWM/output_files/") File("PWM.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/output_files/") File("PWM.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

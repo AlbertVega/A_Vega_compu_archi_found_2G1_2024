@@ -1,12 +1,20 @@
 module Restador_completo (
-			input logic A, B, Cin,
-			output logic Cout, Resta
+			input logic A,
+			input logic B,
+			input logic Cin,
+			
+			output logic Cout,
+			output logic Resta
 );
 
-always_comb begin
-	Cout = ((~A) & B) || (Cin & (~A)) || (Cin & B);
-	Resta = (A ^ B) ^ Cin;
-	
-end
+
+// asignación de resta de salida
+assign Resta = (A ^ B) ^ Cin;
+
+
+// asignación del carry de salida
+assign Cout = ((~A) & B) || (Cin & (~A)) || (Cin & B);
+
+
 
 endmodule

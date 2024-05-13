@@ -5,15 +5,12 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Sumador_medio.sv}
 vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Sumador_completo.sv}
-vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Restador_medio.sv}
 vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Restador_completo.sv}
 vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/restador4bits.sv}
 vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/sumador4bits.sv}
 vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU.sv}
-vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/Decodificador4.sv}
-vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/DecodificadorBinario.sv}
+vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/mux4to1.sv}
 
 vlog -sv -work work +incdir+C:/Users/Alisson\ RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM {C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/PWM/ALU_tb.sv}
 

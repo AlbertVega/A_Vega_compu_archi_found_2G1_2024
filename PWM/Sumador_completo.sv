@@ -1,11 +1,14 @@
 module Sumador_completo (
-			input logic A, B, Cin,
-			output logic Cout, Suma
+			input logic A,
+			input logic B,
+			input logic Cin,
+			
+			output logic Cout,
+			output logic  Suma
 );
 
-always_comb begin
-	Cout = (A & B)|| ((A ^ B)& Cin);
-	Suma = (A ^ B) ^ Cin;
-end
+assign Suma = (A ^ B) ^ Cin;
+
+assign Cout = (A & B) | ((A ^ B) & Cin);
 
 endmodule

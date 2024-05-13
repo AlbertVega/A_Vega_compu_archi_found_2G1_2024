@@ -1,5 +1,5 @@
-Analysis & Elaboration report for SPI_slave
-Sun May 12 22:17:01 2024
+Analysis & Synthesis report for SPI_slave
+Mon May 13 00:16:21 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -7,11 +7,19 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "comparator:comparador"
-  6. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "PWM:PWM_inst|comparator:comparador"
+ 10. Port Connectivity Checks: "ALU:ALU_inst|restador4bits:restador"
+ 11. Port Connectivity Checks: "ALU:ALU_inst|sumador4bits:sumador"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -35,47 +43,36 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun May 12 22:17:01 2024       ;
-; Quartus Prime Version         ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                 ; SPI_slave                                   ;
-; Top-level Entity Name         ; PWM                                         ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon May 13 00:16:21 2024       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; SPI_slave                                   ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 24                                          ;
+; Total pins                      ; 17                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; PWM                ; SPI_slave          ;
+; Top-level entity name                                                           ; main               ; SPI_slave          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -156,8 +153,110 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; sumador4bits.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv      ;         ;
+; Sumador_completo.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Sumador_completo.sv  ;         ;
+; restador4bits.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv     ;         ;
+; Restador_completo.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Restador_completo.sv ;         ;
+; PWM.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv               ;         ;
+; mux4to1.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/mux4to1.sv           ;         ;
+; ALU.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv               ;         ;
+; SPI_slave.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv         ;         ;
+; comparator.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/comparator.sv        ;         ;
+; main.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv              ;         ;
+; BCD_module.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/BCD_module.sv        ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                      ;
++---------------------------------------------+------------------------------------+
+; Resource                                    ; Usage                              ;
++---------------------------------------------+------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 18                                 ;
+;                                             ;                                    ;
+; Combinational ALUT usage for logic          ; 25                                 ;
+;     -- 7 input functions                    ; 0                                  ;
+;     -- 6 input functions                    ; 6                                  ;
+;     -- 5 input functions                    ; 1                                  ;
+;     -- 4 input functions                    ; 14                                 ;
+;     -- <=3 input functions                  ; 4                                  ;
+;                                             ;                                    ;
+; Dedicated logic registers                   ; 24                                 ;
+;                                             ;                                    ;
+; I/O pins                                    ; 17                                 ;
+;                                             ;                                    ;
+; Total DSP Blocks                            ; 0                                  ;
+;                                             ;                                    ;
+; Maximum fan-out node                        ; SPI_slave:SPI_slave_inst|always0~0 ;
+; Maximum fan-out                             ; 16                                 ;
+; Total fan-out                               ; 183                                ;
+; Average fan-out                             ; 2.20                               ;
++---------------------------------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Entity Name       ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+-------------------+--------------+
+; |main                                  ; 25 (0)              ; 24 (0)                    ; 0                 ; 0          ; 17   ; 0            ; |main                                                                 ; main              ; work         ;
+;    |ALU:ALU_inst|                      ; 11 (3)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst                                                    ; ALU               ; work         ;
+;       |mux4to1:mux_bit0|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit0                                   ; mux4to1           ; work         ;
+;       |mux4to1:mux_bit1|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit1                                   ; mux4to1           ; work         ;
+;       |mux4to1:mux_bit2|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit2                                   ; mux4to1           ; work         ;
+;       |mux4to1:mux_bit3|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|mux4to1:mux_bit3                                   ; mux4to1           ; work         ;
+;       |restador4bits:restador|         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador                             ; restador4bits     ; work         ;
+;          |Restador_completo:restador1| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador|Restador_completo:restador1 ; Restador_completo ; work         ;
+;          |Restador_completo:restador2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|restador4bits:restador|Restador_completo:restador2 ; Restador_completo ; work         ;
+;       |sumador4bits:sumador|           ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador                               ; sumador4bits      ; work         ;
+;          |Sumador_completo:Sumador1|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador1     ; Sumador_completo  ; work         ;
+;          |Sumador_completo:Sumador2|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador2     ; Sumador_completo  ; work         ;
+;    |BCD_module:BCD_module_inst|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|BCD_module:BCD_module_inst                                      ; BCD_module        ; work         ;
+;    |PWM:PWM_inst|                      ; 6 (6)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |main|PWM:PWM_inst                                                    ; PWM               ; work         ;
+;    |SPI_slave:SPI_slave_inst|          ; 1 (1)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |main|SPI_slave:SPI_slave_inst                                        ; SPI_slave         ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 24    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "comparator:comparador"                                                              ;
+; Port Connectivity Checks: "PWM:PWM_inst|comparator:comparador"                                                 ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -167,46 +266,116 @@ https://fpgasoftware.intel.com/eula.
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU_inst|restador4bits:restador"                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Cin  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU_inst|sumador4bits:sumador" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; Cin  ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 24                          ;
+;     plain             ; 24                          ;
+; arriav_lcell_comb     ; 32                          ;
+;     normal            ; 32                          ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 1                           ;
+;         6 data inputs ; 6                           ;
+; boundary_port         ; 17                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.53                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun May 12 22:16:47 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPI_slave -c SPI_slave --analysis_and_elaboration
+    Info: Processing started: Mon May 13 00:16:06 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPI_slave -c SPI_slave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file sumador4bits.sv
-    Info (12023): Found entity 1: sumador4bits File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/sumador4bits.sv Line: 1
+    Info (12023): Found entity 1: sumador4bits File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sumador_completo.sv
-    Info (12023): Found entity 1: Sumador_completo File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/Sumador_completo.sv Line: 1
+    Info (12023): Found entity 1: Sumador_completo File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Sumador_completo.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file restador4bits.sv
-    Info (12023): Found entity 1: restador4bits File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/restador4bits.sv Line: 1
+    Info (12023): Found entity 1: restador4bits File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file restador_completo.sv
-    Info (12023): Found entity 1: Restador_completo File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/Restador_completo.sv Line: 1
+    Info (12023): Found entity 1: Restador_completo File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Restador_completo.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pwm_tb.sv
-    Info (12023): Found entity 1: PWM_tb File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/PWM_tb.sv Line: 1
+    Info (12023): Found entity 1: PWM_tb File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pwm.sv
-    Info (12023): Found entity 1: PWM File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/PWM.sv Line: 1
+    Info (12023): Found entity 1: PWM File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux4to1.sv
-    Info (12023): Found entity 1: mux4to1 File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/mux4to1.sv Line: 1
+    Info (12023): Found entity 1: mux4to1 File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/mux4to1.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.sv
-    Info (12023): Found entity 1: ALU_tb File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/ALU_tb.sv Line: 1
+    Info (12023): Found entity 1: ALU_tb File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: ALU File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/ALU.sv Line: 1
-Warning (10261): Verilog HDL Event Control warning at SPI_slave.sv(24): Event Control contains a complex event expression File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/SPI_slave.sv Line: 24
+    Info (12023): Found entity 1: ALU File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 1
+Warning (10261): Verilog HDL Event Control warning at SPI_slave.sv(24): Event Control contains a complex event expression File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file spi_slave.sv
-    Info (12023): Found entity 1: SPI_slave File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/SPI_slave.sv Line: 1
+    Info (12023): Found entity 1: SPI_slave File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparator.sv
-    Info (12023): Found entity 1: comparator File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/comparator.sv Line: 1
-Info (12127): Elaborating entity "PWM" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at PWM.sv(28): truncated value with size 32 to match size of target (4) File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/PWM.sv Line: 28
-Info (12128): Elaborating entity "comparator" for hierarchy "comparator:comparador" File: C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/PWM.sv Line: 19
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4768 megabytes
-    Info: Processing ended: Sun May 12 22:17:01 2024
-    Info: Elapsed time: 00:00:14
+    Info (12023): Found entity 1: comparator File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/comparator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file main.sv
+    Info (12023): Found entity 1: main File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_module.sv
+    Info (12023): Found entity 1: BCD_module File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/BCD_module.sv Line: 1
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "SPI_slave" for hierarchy "SPI_slave:SPI_slave_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 38
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 50
+Info (12128): Elaborating entity "sumador4bits" for hierarchy "ALU:ALU_inst|sumador4bits:sumador" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 28
+Info (12128): Elaborating entity "Sumador_completo" for hierarchy "ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador0" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv Line: 26
+Info (12128): Elaborating entity "restador4bits" for hierarchy "ALU:ALU_inst|restador4bits:restador" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 38
+Info (12128): Elaborating entity "Restador_completo" for hierarchy "ALU:ALU_inst|restador4bits:restador|Restador_completo:restador0" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv Line: 28
+Info (12128): Elaborating entity "mux4to1" for hierarchy "ALU:ALU_inst|mux4to1:mux_bit0" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 54
+Info (12128): Elaborating entity "PWM" for hierarchy "PWM:PWM_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at PWM.sv(29): truncated value with size 32 to match size of target (4) File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 29
+Info (12128): Elaborating entity "comparator" for hierarchy "PWM:PWM_inst|comparator:comparador" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 20
+Info (12128): Elaborating entity "BCD_module" for hierarchy "BCD_module:BCD_module_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 64
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 62 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 13 output pins
+    Info (21061): Implemented 45 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Mon May 13 00:16:21 2024
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:20
 
 

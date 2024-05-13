@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY PWM
+set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:21:17  MAY 09, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -49,15 +49,10 @@ set_location_assignment PIN_AC18 -to MOSI
 set_location_assignment PIN_Y17 -to SCLK
 set_location_assignment PIN_AD17 -to SS
 set_location_assignment PIN_Y18 -to MISO
-set_location_assignment PIN_W16 -to bits_out[1]
-set_location_assignment PIN_V17 -to bits_out[2]
-set_location_assignment PIN_V18 -to bits_out[3]
-set_location_assignment PIN_W17 -to bits_out[4]
 set_location_assignment PIN_W19 -to bits_out[5]
 set_location_assignment PIN_Y19 -to bits_out[6]
 set_location_assignment PIN_W20 -to bits_out[7]
 set_location_assignment PIN_W21 -to bits_out[8]
-set_location_assignment PIN_Y21 -to bits_out[9]
 set_global_assignment -name SYSTEMVERILOG_FILE sumador4bits.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Sumador_completo.sv
 set_global_assignment -name SYSTEMVERILOG_FILE restador4bits.sv
@@ -72,12 +67,9 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AB12 -to rst
 set_location_assignment PIN_AF14 -to clk
-set_location_assignment PIN_V16 -to led
+set_location_assignment PIN_Y21 -to led
 set_location_assignment PIN_AA14 -to btn
 set_global_assignment -name SYSTEMVERILOG_FILE comparator.sv
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
@@ -89,4 +81,20 @@ set_global_assignment -name EDA_TEST_BENCH_NAME PWM_tb -section_id eda_simulatio
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id PWM_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME PWM_tb -section_id PWM_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE PWM_tb.sv -section_id PWM_tb
+set_global_assignment -name SYSTEMVERILOG_FILE main.sv
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_V18 -to V
+set_location_assignment PIN_V17 -to C
+set_location_assignment PIN_W16 -to N
+set_location_assignment PIN_V16 -to Z
+set_global_assignment -name SYSTEMVERILOG_FILE BCD_module.sv
+set_location_assignment PIN_AE26 -to display[0]
+set_location_assignment PIN_AE27 -to display[1]
+set_location_assignment PIN_AE28 -to display[2]
+set_location_assignment PIN_AG27 -to display[3]
+set_location_assignment PIN_AF28 -to display[4]
+set_location_assignment PIN_AG28 -to display[5]
+set_location_assignment PIN_AH28 -to display[6]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

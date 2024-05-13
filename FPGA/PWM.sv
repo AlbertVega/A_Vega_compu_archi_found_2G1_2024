@@ -1,6 +1,7 @@
-module PWM( input logic clk,
-				input logic [3:0] RegALU,
-				output logic led
+module PWM( 
+	input logic clk,
+	input logic [3:0] RegALU,
+	output logic led
 
 );
 

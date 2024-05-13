@@ -1,9 +1,10 @@
-module ALU(input logic [3:0] a,
-			  input logic [3:0] b,
-			  input logic [1:0] Sel,
-			  
-			  output logic [3:0] Result,
-			  output logic N, Z, C, V
+module ALU(
+	input logic [3:0] a,
+	input logic [3:0] b,
+	input logic [1:0] Sel,
+
+	output logic [3:0] Result,
+	output logic N, Z, C, V
 );
 	
 	logic [3:0] adder_result;
@@ -84,7 +85,7 @@ module ALU(input logic [3:0] a,
 	 
 	// asignacion de flags
 
-	assign C = ~Sel[1] & (adder_cout | subtractor_cout);
+	assign C = ~Sel[1] & (adder_cout);
 	assign N = Result[3];
 	assign Z = ~Result[3] & ~Result[2] & ~Result[1] & ~Result[0];
 	assign V = ((~Sel[0] ^ ~a[3]) ^ ~b[3]) & (a[3] ^ (adder_result[3] | subtractor_result[3])) & ~Sel[1] ;

@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/Users/alber/OneDrive - Estudiantes ITCR/UNIVERSIDAD SEMESTRE VII/Fundamentos de Arquitectura de Computadores/FPGA/output_files/") File("SPI_slave.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/output_files/") File("SPI_slave.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

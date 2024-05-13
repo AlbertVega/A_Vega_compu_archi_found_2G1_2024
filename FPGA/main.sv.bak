@@ -1,0 +1,38 @@
+module main(
+	input logic clk,
+	input logic SCLK,
+	input logic MOSI,
+	input logic SS,
+	output logic MISO,
+	output logic N, Z, C, V,
+	output logic led
+);
+
+logic [9:0] bits;
+logic [3:0] Result
+
+SPI_slave SPI_slave_inst(
+	.SCLK(SCLK),
+	.MOSI(MOSI),
+	.SS(SS),
+	.MISO(MISO),
+	.bits_out(bits)
+);
+
+
+ALU ALU_inst (
+	.a(bits[9:6]),
+	.b(bits[5:2]),
+	.Sel(bits[1:0]),
+	.Result(Result),
+	.N(N), 
+	.Z(Z), 
+	.C(C),
+	.V(V)
+);
+
+PWM PWM_inst(
+	.clk(clk),
+	.RegALU(Result),
+	.led(led)
+);

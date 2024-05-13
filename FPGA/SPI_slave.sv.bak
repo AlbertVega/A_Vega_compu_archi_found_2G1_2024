@@ -1,0 +1,76 @@
+module SPI_slave(
+	input logic SCLK,
+	input logic MOSI,
+	input logic SS,
+	output logic MISO
+);
+
+// bits de operandos
+reg bit15;
+reg bit14;
+reg bit13;
+reg bit12;
+reg bit11;
+reg bit10;
+reg bit9;
+reg bit8;
+// bits de operador
+reg bit7;
+reg bit6;
+reg bit5;
+reg bit4;
+reg bit3;
+reg bit2;
+reg bit1;
+reg bit0;
+
+// leer los datos del Arduino (MOSI)
+always @ (posedge SCLK & !SS) begin
+	bit15 <= bit14;	
+	bit14 <= bit13;
+	bit13 <= bit12;
+	bit12 <= bit11;
+	bit11 <= bit10;
+	bit10 <= bit9;
+	bit9 <= bit8;
+	bit8 <= bit7;
+	bit7 <= bit6;
+	bit6 <= bit5;
+	bit5 <= bit4;
+	bit4 <= bit3;
+	bit3 <= bit2;
+	bit2 <= bit1;
+	bit1 <= bit0;
+	bit0 <= MOSI;
+end	
+
+logic [15:0] bits;
+
+assign bits[15] = bit0;
+assign bits[14] = bit1;
+assign bits[13] = bit2;
+assign bits[12] = bit3;
+assign bits[11] = bit4;
+assign bits[10] = bit5;
+assign bits[9] = bit6;
+assign bits[8] = bit7;
+assign bits[7] = bit8;
+assign bits[6] = bit9;
+assign bits[5] = bit10;
+assign bits[4] = bit11;
+assign bits[3] = bit12;
+assign bits[2] = bit13;
+assign bits[1] = bit14;
+assign bits[0] = bit15;
+
+reg [4:0] counter;
+
+// mandar datos al Arduino
+always @ (negedge SLK & SS) begin
+
+	MISO <= bits[counter];
+	counter <= counter + 1;
+	
+end 
+
+endmodule

@@ -8,7 +8,7 @@ N << ALU:ALU_inst.N
 Z << ALU:ALU_inst.Z
 C << ALU:ALU_inst.C
 V << ALU:ALU_inst.V
-led << PWM:PWM_inst.led
+velocidad << PWM:PWM_inst.led
 display[0] << BCD_module:BCD_module_inst.display
 display[1] << BCD_module:BCD_module_inst.display
 display[2] << BCD_module:BCD_module_inst.display

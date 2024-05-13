@@ -1,6 +1,6 @@
 Analysis & Synthesis report for SPI_slave
-Mon May 13 02:07:33 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Mon May 13 02:29:59 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -46,8 +46,8 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 13 02:07:33 2024       ;
-; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status     ; Successful - Mon May 13 02:29:59 2024       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SPI_slave                                   ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
@@ -158,36 +158,35 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                          ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
-; sumador4bits.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv      ;         ;
-; Sumador_completo.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Sumador_completo.sv  ;         ;
-; restador4bits.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv     ;         ;
-; Restador_completo.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Restador_completo.sv ;         ;
-; PWM.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv               ;         ;
-; mux4to1.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/mux4to1.sv           ;         ;
-; ALU.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv               ;         ;
-; SPI_slave.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv         ;         ;
-; comparator.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/comparator.sv        ;         ;
-; main.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv              ;         ;
-; BCD_module.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/BCD_module.sv        ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; sumador4bits.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv      ;         ;
+; Sumador_completo.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Sumador_completo.sv  ;         ;
+; restador4bits.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv     ;         ;
+; Restador_completo.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Restador_completo.sv ;         ;
+; PWM.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv               ;         ;
+; mux4to1.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/mux4to1.sv           ;         ;
+; ALU.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv               ;         ;
+; SPI_slave.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv         ;         ;
+; comparator.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/comparator.sv        ;         ;
+; main.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv              ;         ;
+; BCD_module.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/BCD_module.sv        ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------+
@@ -293,9 +292,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 24                          ;
 ;     plain             ; 24                          ;
-; arriav_lcell_comb     ; 26                          ;
-;     normal            ; 26                          ;
-;         1 data inputs ; 2                           ;
+; arriav_lcell_comb     ; 27                          ;
+;     normal            ; 27                          ;
+;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 2                           ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 14                          ;
@@ -304,7 +303,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 17                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.26                        ;
+; Average LUT depth     ; 2.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -322,50 +321,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon May 13 02:07:17 2024
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon May 13 02:29:37 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPI_slave -c SPI_slave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file sumador4bits.sv
-    Info (12023): Found entity 1: sumador4bits File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv Line: 1
+    Info (12023): Found entity 1: sumador4bits File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sumador_completo.sv
-    Info (12023): Found entity 1: Sumador_completo File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Sumador_completo.sv Line: 1
+    Info (12023): Found entity 1: Sumador_completo File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Sumador_completo.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file restador4bits.sv
-    Info (12023): Found entity 1: restador4bits File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv Line: 1
+    Info (12023): Found entity 1: restador4bits File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file restador_completo.sv
-    Info (12023): Found entity 1: Restador_completo File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Restador_completo.sv Line: 1
+    Info (12023): Found entity 1: Restador_completo File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/Restador_completo.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pwm_tb.sv
-    Info (12023): Found entity 1: PWM_tb File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM_tb.sv Line: 1
+    Info (12023): Found entity 1: PWM_tb File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pwm.sv
-    Info (12023): Found entity 1: PWM File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 1
+    Info (12023): Found entity 1: PWM File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux4to1.sv
-    Info (12023): Found entity 1: mux4to1 File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/mux4to1.sv Line: 1
+    Info (12023): Found entity 1: mux4to1 File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/mux4to1.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.sv
-    Info (12023): Found entity 1: ALU_tb File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU_tb.sv Line: 1
+    Info (12023): Found entity 1: ALU_tb File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: ALU File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 1
-Warning (10261): Verilog HDL Event Control warning at SPI_slave.sv(24): Event Control contains a complex event expression File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv Line: 24
+    Info (12023): Found entity 1: ALU File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 1
+Warning (10261): Verilog HDL Event Control warning at SPI_slave.sv(24): Event Control contains a complex event expression File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file spi_slave.sv
-    Info (12023): Found entity 1: SPI_slave File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv Line: 1
+    Info (12023): Found entity 1: SPI_slave File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/SPI_slave.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparator.sv
-    Info (12023): Found entity 1: comparator File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/comparator.sv Line: 1
+    Info (12023): Found entity 1: comparator File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/comparator.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file main.sv
-    Info (12023): Found entity 1: main File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 1
+    Info (12023): Found entity 1: main File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bcd_module.sv
-    Info (12023): Found entity 1: BCD_module File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/BCD_module.sv Line: 1
+    Info (12023): Found entity 1: BCD_module File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/BCD_module.sv Line: 1
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Info (12128): Elaborating entity "SPI_slave" for hierarchy "SPI_slave:SPI_slave_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 44
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 56
-Info (12128): Elaborating entity "sumador4bits" for hierarchy "ALU:ALU_inst|sumador4bits:sumador" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 28
-Info (12128): Elaborating entity "Sumador_completo" for hierarchy "ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador0" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv Line: 26
-Info (12128): Elaborating entity "restador4bits" for hierarchy "ALU:ALU_inst|restador4bits:restador" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 38
-Info (12128): Elaborating entity "Restador_completo" for hierarchy "ALU:ALU_inst|restador4bits:restador|Restador_completo:restador0" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv Line: 28
-Info (12128): Elaborating entity "mux4to1" for hierarchy "ALU:ALU_inst|mux4to1:mux_bit0" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 54
-Info (12128): Elaborating entity "PWM" for hierarchy "PWM:PWM_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 62
-Warning (10230): Verilog HDL assignment warning at PWM.sv(29): truncated value with size 32 to match size of target (4) File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 29
-Info (12128): Elaborating entity "comparator" for hierarchy "PWM:PWM_inst|comparator:comparador" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 20
-Info (12128): Elaborating entity "BCD_module" for hierarchy "BCD_module:BCD_module_inst" File: C:/Users/alber/OneDrive/Documentos/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 70
+Info (12128): Elaborating entity "SPI_slave" for hierarchy "SPI_slave:SPI_slave_inst" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 44
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_inst" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 56
+Info (12128): Elaborating entity "sumador4bits" for hierarchy "ALU:ALU_inst|sumador4bits:sumador" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 28
+Info (12128): Elaborating entity "Sumador_completo" for hierarchy "ALU:ALU_inst|sumador4bits:sumador|Sumador_completo:Sumador0" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/sumador4bits.sv Line: 26
+Info (12128): Elaborating entity "restador4bits" for hierarchy "ALU:ALU_inst|restador4bits:restador" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 38
+Info (12128): Elaborating entity "Restador_completo" for hierarchy "ALU:ALU_inst|restador4bits:restador|Restador_completo:restador0" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/restador4bits.sv Line: 28
+Info (12128): Elaborating entity "mux4to1" for hierarchy "ALU:ALU_inst|mux4to1:mux_bit0" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/ALU.sv Line: 54
+Info (12128): Elaborating entity "PWM" for hierarchy "PWM:PWM_inst" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 62
+Warning (10230): Verilog HDL assignment warning at PWM.sv(29): truncated value with size 32 to match size of target (4) File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 29
+Info (12128): Elaborating entity "comparator" for hierarchy "PWM:PWM_inst|comparator:comparador" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/PWM.sv Line: 20
+Info (12128): Elaborating entity "BCD_module" for hierarchy "BCD_module:BCD_module_inst" File: C:/Users/Alisson RM/Documents/GitHub/A_Vega_compu_archi_found_2G1_2024/FPGA/main.sv Line: 70
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -374,9 +373,9 @@ Info (21057): Implemented 62 device resources after synthesis - the final resour
     Info (21059): Implemented 13 output pins
     Info (21061): Implemented 45 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4869 megabytes
-    Info: Processing ended: Mon May 13 02:07:33 2024
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Mon May 13 02:29:59 2024
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:44
 
 

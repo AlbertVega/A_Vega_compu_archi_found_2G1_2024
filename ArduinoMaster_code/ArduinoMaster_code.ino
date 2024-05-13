@@ -50,11 +50,11 @@ void loop()
       } 
     } else {
       digitalWrite(SS, LOW); //enable slave select
-      sentMessage = SPI.transfer(0b10011000); 
+      sentMessage = SPI.transfer(0b00010111); 
       //                           ^^^^^^^^
       //                          15
       Serial.println(sentMessage);
-      sentMessage= SPI.transfer(0b10000000); 
+      sentMessage= SPI.transfer(0b00000000); 
       //                          ^^^^^^^^
       //                          76543210
       Serial.println(sentMessage);

@@ -5,7 +5,7 @@ module main(
 	input logic SS,
 	output logic MISO,
 	output logic N, Z, C, V,
-	output logic led,
+	output logic velocidad,
 	output logic [6:0] display
 );
 
@@ -58,7 +58,7 @@ ALU ALU_inst (
 PWM PWM_inst(
 	.clk(clk),
 	.RegALU(Result),
-	.led(led)
+	.led(velocidad)
 );
 
 BCD_module BCD_module_inst(
